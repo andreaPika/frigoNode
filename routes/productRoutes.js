@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Prodotto = require('../models/prodotto');
+const Product = require('../models/product');
 const Category = require('../models/category');
 const FridgePosition = require('../models/fridgePosition');
 
 // Aggiungi un prodotto
 router.post('/', async (req, res) => {
   try {
+  console.log(req.body);
     const prodotto = new Prodotto(req.body);
     await prodotto.save();
     res.status(201).json(prodotto);
@@ -18,7 +19,7 @@ router.post('/', async (req, res) => {
 // Ottieni tutti i prodotti
 router.get('/', async (req, res) => {
   try {
-    const prodotti = await Prodotto.find();
+    const prodotti = await Prodotto.find().populate('category').populate('fridgePosition');
     res.json(prodotti);
   } catch (error) {
     res.status(500).json({ error: error.message });
