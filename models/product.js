@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
   quantity: { type: Number, required: true, min: 0 },
   expiryDate: { type: Date, required: true },
-  position: { type: mongoose.Schema.Types.ObjectId, ref: 'position' }, // Ad esempio: "Ripiano 2, destra"
+  fridgePosition: { type: mongoose.Schema.Types.ObjectId, ref: 'FridgePosition' }, // Ad esempio: "Ripiano 2, destra"
 });
 
 module.exports = mongoose.model('Product', productSchema);

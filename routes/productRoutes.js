@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const Category = require('../models/category');
-const Position = require('../models/position');
+const FridgePosition = require('../models/fridgePosition');
 const { authenticate } = require('../middleware/authMiddleware');
 
 // Aggiungi un prodotto
@@ -20,7 +20,7 @@ router.post('/', authenticate, async (req, res) => {
 // Ottieni tutti i prodotti
 router.get('/', authenticate, async (req, res) => {
   try {
-    const prodotti = await Product.find().populate('category').populate('position');
+    const prodotti = await Product.find().populate('category').populate('fridgePosition');
     res.json(prodotti);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -60,8 +60,8 @@ router.get('/categories', authenticate, async (req, res) => {
 // Endpoint per le posizioni del frigo
 router.get('/fridge-positions', authenticate, async (req, res) => {
   try {
-    const positions = await Position.find();
-    res.json(positions);
+    const fridgePositions = await FridgePosition.find();
+    res.json(fridgePositions);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching fridge positions' });
   }
