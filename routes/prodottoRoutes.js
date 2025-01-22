@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Prodotto = require('../models/prodotto');
+const Category = require('../models/category');
+const FridgePosition = require('../models/fridgePosition');
 
 // Aggiungi un prodotto
 router.post('/', async (req, res) => {
@@ -40,6 +42,26 @@ router.delete('/:id', async (req, res) => {
     res.status(204).end();
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Endpoint per le categorie
+router.get('/categories', async (req, res) => {
+  try {
+    const categories = await Category.find();
+    res.json(categories);
+  } catch (err) {
+    res.status(500).json({ error: 'Error fetching categories' });
+  }
+});
+
+// Endpoint per le posizioni del frigo
+router.get('/fridge-positions', async (req, res) => {
+  try {
+    const positions = await FridgePosition.find();
+    res.json(positions);
+  } catch (err) {
+    res.status(500).json({ error: 'Error fetching fridge positions' });
   }
 });
 

@@ -45,7 +45,8 @@ const { authenticate } = require('../middleware/authMiddleware');
  *         description: Errore del server
  */
 router.post('/register', async (req, res) => {
-  const { firstName, lastName, email, password, role, companyId } = req.body;
+console.log(req.body);
+  const { firstName, lastName, email, password, role } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
@@ -57,7 +58,8 @@ router.post('/register', async (req, res) => {
       firstName,
       lastName,
       email,
-      password
+      password,
+      role
     });
 
     await user.save();
