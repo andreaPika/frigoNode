@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const fridgePositionSchema = new mongoose.Schema({
+const positionSchema = new mongoose.Schema({
   name: { type: String, required: true },
 });
 
-module.exports = mongoose.model('FridgePosition', fridgePositionSchema);
+module.exports = mongoose.model('Position', positionSchema);
