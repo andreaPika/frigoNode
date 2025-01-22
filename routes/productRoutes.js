@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const Category = require('../models/category');
-const FridgePosition = require('../models/fridgePosition');
+const Position = require('../models/position');
 const { authenticate } = require('../middleware/authMiddleware');
 
 // Aggiungi un prodotto
 router.post('/', authenticate, async (req, res) => {
   try {
   console.log(req.body);
-    const prodotto = new Prodotto(req.body);
+    const prodotto = new Product(req.body);
     await prodotto.save();
     res.status(201).json(prodotto);
   } catch (error) {
@@ -20,7 +20,7 @@ router.post('/', authenticate, async (req, res) => {
 // Ottieni tutti i prodotti
 router.get('/', authenticate, async (req, res) => {
   try {
-    const prodotti = await Prodotto.find().populate('category').populate('fridgePosition');
+    const prodotti = await Product.find().populate('category').populate('position');
     res.json(prodotti);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -30,7 +30,7 @@ router.get('/', authenticate, async (req, res) => {
 // Modifica un prodotto
 router.put('/:id', authenticate, async (req, res) => {
   try {
-    const prodotto = await Prodotto.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const prodotto = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(prodotto);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -60,7 +60,7 @@ router.get('/categories', authenticate, async (req, res) => {
 // Endpoint per le posizioni del frigo
 router.get('/fridge-positions', authenticate, async (req, res) => {
   try {
-    const positions = await FridgePosition.find();
+    const positions = await Position.find();
     res.json(positions);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching fridge positions' });
