@@ -3,9 +3,10 @@ const router = express.Router();
 const Product = require('../models/product');
 const Category = require('../models/category');
 const FridgePosition = require('../models/fridgePosition');
+const { authenticate } = require('../middleware/authMiddleware');
 
 // Aggiungi un prodotto
-router.post('/', async (req, res) => {
+router.post('/', authenticate, async (req, res) => {
   try {
   console.log(req.body);
     const prodotto = new Prodotto(req.body);
@@ -17,7 +18,7 @@ router.post('/', async (req, res) => {
 });
 
 // Ottieni tutti i prodotti
-router.get('/', async (req, res) => {
+router.get('/', authenticate, async (req, res) => {
   try {
     const prodotti = await Prodotto.find().populate('category').populate('fridgePosition');
     res.json(prodotti);
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // Modifica un prodotto
-router.put('/:id', async (req, res) => {
+router.put('/:id', authenticate, async (req, res) => {
   try {
     const prodotto = await Prodotto.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(prodotto);
@@ -37,7 +38,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Elimina un prodotto
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
   try {
     await Prodotto.findByIdAndDelete(req.params.id);
     res.status(204).end();
@@ -47,7 +48,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // Endpoint per le categorie
-router.get('/categories', async (req, res) => {
+router.get('/categories', authenticate, async (req, res) => {
   try {
     const categories = await Category.find();
     res.json(categories);
@@ -57,7 +58,7 @@ router.get('/categories', async (req, res) => {
 });
 
 // Endpoint per le posizioni del frigo
-router.get('/fridge-positions', async (req, res) => {
+router.get('/fridge-positions', authenticate, async (req, res) => {
   try {
     const positions = await FridgePosition.find();
     res.json(positions);
