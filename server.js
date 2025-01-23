@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:4200', // Allow only requests from Angular's dev server (localhost:4200)
+    origin: 'http://localhost:4100', // Allow only requests from Angular's dev server (localhost:4200)
     methods: ['GET', 'POST', 'PUT', 'OPTIONS', 'DELETE'], // Allow only GET and POST methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow the Content-Type header
     preflightContinue: false,  // Invia una risposta automatica alla richiesta preflight
