@@ -37,6 +37,32 @@ router.put('/:id', authenticate, async (req, res) => {
   }
 });
 
+// Aggiorna la quantità di un prodotto
+router.put('/qnt/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const { quantity } = req.body;
+
+    if (quantity < 0) {
+      return res.status(400).json({ message: 'La quantità non può essere negativa.' });
+    }
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+      productId,
+      { quantity },
+      { new: true }
+    );
+
+    if (!updatedProduct) {
+      return res.status(404).json({ message: 'Prodotto non trovato.' });
+    }
+
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ message: 'Errore nel server.', error });
+  }
+});
+
 // Elimina un prodotto
 router.delete('/:id', authenticate, async (req, res) => {
   try {
