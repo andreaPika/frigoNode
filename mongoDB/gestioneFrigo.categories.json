@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8bb"
+  },
+  "name": "Frutta"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8bc"
+  },
+  "name": "Verdura"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8bd"
+  },
+  "name": "Biscotti"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8be"
+  },
+  "name": "Bevande"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8bf"
+  },
+  "name": "Carne"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8c0"
+  },
+  "name": "Scatolame"
+},
+{
+  "_id": {
+    "$oid": "6790fcb71815c06bbd63e8c1"
+  },
+  "name": "Altro"
+}]

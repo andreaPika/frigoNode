@@ -1,0 +1,126 @@
+[{
+  "_id": {
+    "$oid": "6846ade8ed1a5e7cbb261b0a"
+  },
+  "name": "Mulino Bianco",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8bd"
+  },
+  "quantity": 3,
+  "unit": "Scatole",
+  "expiryDate": {
+    "$date": "2025-06-27T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b6"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846ae26ed1a5e7cbb261b0c"
+  },
+  "name": "Hamburger",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8bf"
+  },
+  "quantity": 10,
+  "unit": "pcs",
+  "expiryDate": {
+    "$date": "2025-07-31T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b5"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846ae51ed1a5e7cbb261b15"
+  },
+  "name": "Coca Cola",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8be"
+  },
+  "quantity": 0,
+  "unit": "l",
+  "expiryDate": {
+    "$date": "2026-06-26T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b6"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846ae6eed1a5e7cbb261b17"
+  },
+  "name": "Mayonese",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8c1"
+  },
+  "quantity": 1,
+  "unit": "pcs",
+  "expiryDate": {
+    "$date": "2027-01-08T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b4"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846ae83ed1a5e7cbb261b19"
+  },
+  "name": "Piselli",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8c0"
+  },
+  "quantity": 2,
+  "unit": "Scatole",
+  "expiryDate": {
+    "$date": "2027-02-11T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b6"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846aea6ed1a5e7cbb261b22"
+  },
+  "name": "Pane",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8c1"
+  },
+  "quantity": 1,
+  "unit": "pcs",
+  "expiryDate": {
+    "$date": "2025-06-10T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b6"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6846aec2ed1a5e7cbb261b24"
+  },
+  "name": "Prosciutto",
+  "category": {
+    "$oid": "6790fcb71815c06bbd63e8c1"
+  },
+  "quantity": 200,
+  "unit": "g",
+  "expiryDate": {
+    "$date": "2025-06-06T00:00:00.000Z"
+  },
+  "fridgePosition": {
+    "$oid": "6790fc301815c06bbd63e8b4"
+  },
+  "__v": 0
+}]

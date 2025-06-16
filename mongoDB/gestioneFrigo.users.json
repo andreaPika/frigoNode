@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "682ade6c2de68aa2b4a209d2"
+  },
+  "firstName": "Admin",
+  "lastName": "Admin",
+  "email": "admin@example.com",
+  "password": "$2a$10$e0qrxAgfrZrF/uYcUfzfH.KXTbrHXSizkSJ2hsH7/1rzPObuB9Ux6",
+  "role": "admin",
+  "companyId": null,
+  "createdAt": {
+    "$date": "2025-01-10T13:23:23.302Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-10T13:39:00.564Z"
+  },
+  "__v": 0,
+  "gender": "Male",
+  "address": "Via valgioie 81 torino",
+  "dateOfBirth": {
+    "$date": "1970-09-25T00:00:00.000Z"
+  },
+  "phoneNumber": "34352534234"
+}]

@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6790fc301815c06bbd63e8b4"
+  },
+  "name": "Frigo"
+},
+{
+  "_id": {
+    "$oid": "6790fc301815c06bbd63e8b5"
+  },
+  "name": "Congelatore"
+},
+{
+  "_id": {
+    "$oid": "6790fc301815c06bbd63e8b6"
+  },
+  "name": "Dispensa"
+}]
