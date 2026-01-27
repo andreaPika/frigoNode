@@ -1,24 +1,17 @@
 [{
   "_id": {
-    "$oid": "682ade6c2de68aa2b4a209d2"
+    "$oid": "69766fc40025f3c4a0fddea8"
   },
-  "firstName": "Admin",
-  "lastName": "Admin",
-  "email": "admin@example.com",
-  "password": "$2a$10$e0qrxAgfrZrF/uYcUfzfH.KXTbrHXSizkSJ2hsH7/1rzPObuB9Ux6",
+  "firstName": "Andrea",
+  "lastName": "Bassani",
+  "email": "dos333@gmail.com",
+  "password": "$2a$10$e0FDES8XuVhDjKyVjcbzN..oMT8HvEzNBWUIV7NqZD3wjVz0ruSXS",
   "role": "admin",
-  "companyId": null,
   "createdAt": {
-    "$date": "2025-01-10T13:23:23.302Z"
+    "$date": "2026-01-25T19:32:20.806Z"
   },
   "updatedAt": {
-    "$date": "2025-01-10T13:39:00.564Z"
+    "$date": "2026-01-25T19:32:20.806Z"
   },
-  "__v": 0,
-  "gender": "Male",
-  "address": "Via valgioie 81 torino",
-  "dateOfBirth": {
-    "$date": "1970-09-25T00:00:00.000Z"
-  },
-  "phoneNumber": "34352534234"
+  "__v": 0
 }]
