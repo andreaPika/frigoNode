@@ -5,6 +5,7 @@ const productSchema = new mongoose.Schema({
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
   quantity: { type: Number, required: true, min: 0 },
   unit: { type: String, required: true },
+  barcode: { type: String },
   expiryDate: { type: Date, required: true },
   fridgePosition: { type: mongoose.Schema.Types.ObjectId, ref: 'FridgePosition' }, // Ad esempio: "Ripiano 2, destra"
 });
