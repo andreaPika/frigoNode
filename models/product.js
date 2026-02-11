@@ -7,7 +7,8 @@ const productSchema = new mongoose.Schema({
   unit: { type: String, required: true },
   barcode: { type: String },
   expiryDate: { type: Date, required: true },
-  fridgePosition: { type: mongoose.Schema.Types.ObjectId, ref: 'FridgePosition' }, // Ad esempio: "Ripiano 2, destra"
+  fridgePosition: { type: mongoose.Schema.Types.ObjectId, ref: 'FridgePosition' },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 });
 
 module.exports = mongoose.model('Product', productSchema);

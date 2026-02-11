@@ -10,7 +10,11 @@ const { authenticate } = require('../middleware/authMiddleware');
 router.post('/', authenticate, async (req, res) => {
   try {
   console.log(req.body);
-    const prodotto = new Product(req.body);
+    const prodotto = new Product({
+          ...req.body,
+          user: req.user.id // 👈 AGGIUNTO AUTOMATICAMENTE
+        });
+
     await prodotto.save();
     res.status(201).json(prodotto);
   } catch (error) {
@@ -21,7 +25,9 @@ router.post('/', authenticate, async (req, res) => {
 // Ottieni tutti i prodotti
 router.get('/', authenticate, async (req, res) => {
   try {
-    const prodotti = await Product.find().populate('category').populate('fridgePosition');
+    const prodotti = await Product.find({ user: req.user.id })
+          .populate('category')
+          .populate('fridgePosition');
     res.json(prodotti);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -39,7 +45,7 @@ router.put('/:id', authenticate, async (req, res) => {
 });
 
 // Aggiorna la quantità di un prodotto
-router.put('/qnt/:id', async (req, res) => {
+router.put('/qnt/:id', authenticate, async (req, res) => {
   try {
     const productId = req.params.id;
     const { quantity } = req.body;
@@ -85,7 +91,7 @@ router.delete('/:id', authenticate, async (req, res) => {
 // Endpoint per le categorie
 router.get('/categories', authenticate, async (req, res) => {
   try {
-    const categories = await Category.find();
+    const categories = await Category.find({ user: req.user.id });
     res.json(categories);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching categories' });
@@ -96,7 +102,10 @@ router.get('/categories', authenticate, async (req, res) => {
 router.post('/categories', authenticate, async (req, res) => {
   try {
     console.log(req.body);
-    const categories = new Category(req.body);
+    const categories = new Category({
+       ...req.body,
+       user: req.user.id // 👈 AGGIUNTO AUTOMATICAMENTE
+        });
     await categories.save();
     res.status(201).json(categories);
   } catch (error) {
@@ -124,7 +133,7 @@ router.delete('/categories/:id', authenticate, async (req, res) => {
 // Endpoint per le posizioni del frigo
 router.get('/fridge-positions', authenticate, async (req, res) => {
   try {
-    const fridgePositions = await FridgePosition.find();
+    const fridgePositions = await FridgePosition.find({ user: req.user.id });
     res.json(fridgePositions);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching fridge positions' });
@@ -135,7 +144,11 @@ router.get('/fridge-positions', authenticate, async (req, res) => {
 router.post('/fridge-positions', authenticate, async (req, res) => {
   try {
     console.log(req.body);
-    const fridgePositions = new FridgePosition(req.body);
+    const fridgePositions = new FridgePosition(
+    {
+              ...req.body,
+              user: req.user.id // 👈 AGGIUNTO AUTOMATICAMENTE
+            });
     await fridgePositions.save();
     res.status(201).json(fridgePositions);
   } catch (error) {
